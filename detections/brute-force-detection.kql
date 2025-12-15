@@ -1,0 +1,5 @@
+SecurityEvent
+| where EventID == 4625
+| where TimeGenerated > ago(15m)
+| summarize FailedAttempts = count() by Computer
+| where FailedAttempts >= 3
