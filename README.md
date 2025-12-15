@@ -22,9 +22,3 @@ SecurityEvent
 | where TimeGenerated > ago(15m)
 | summarize FailedAttempts = count() by Computer
 | where FailedAttempts >= 3
-
-Category: Credential Access
-
-Outcome
-
-Successfully detected multiple failed login attempts and generated a Microsoft Sentinel incident, demonstrating hands-on SOC detection and incident response capability.
